@@ -1,6 +1,6 @@
-#SplitStream
+#SeparateStreams
 
-Split an Arduino stream writes (like Serial) into 2 streams
+Make an Arduino stream write to one stream and read from another
 
 ##Note
 This libarary is very much in beta. It hasn't been fully tested nor are all Serial class methods implemented yet.
@@ -9,12 +9,13 @@ This libarary is very much in beta. It hasn't been fully tested nor are all Seri
 As usual, download zip, unzip and rename to remove the dash character and place in your Arduino Libraries folder, on MacOSX ~/Documents/Arduino/libraries/
 
 ##Use
-Create a split stream out of 2 Stream. 
+First argument is stream which will get writes, second stream is stream which reads, available, and peek will be done to.
 ```cpp
-SplitStream splitStream(Serial, mySerial);
+SeparateStreams separateStreams(Serial, Serial);
 ```
 
-Now everything written to splitstream will be written to both. All reads, peeks, and available are done on first stream. 
+Then use it just like a stream.
 ```cpp
-splitStream.write('a');
+separateStreams.write('a');
+Serial.println((char)separateStreams.read());
 ```
