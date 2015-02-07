@@ -1,4 +1,4 @@
-#SeparateStreams
+#CombineStreams
 
 Make an Arduino stream write to one stream and read from another
 
@@ -11,11 +11,11 @@ As usual, download zip, unzip and rename to remove the dash character and place 
 ##Use
 First argument is stream which will get writes, second stream is stream which reads, available, and peek will be done to.
 ```cpp
-SeparateStreams separateStreams(Serial, Serial);
+CombineStreams combineStreams(Serial, Serial);
 ```
 
 Then use it just like a stream.
 ```cpp
-separateStreams.write('a');
-Serial.println((char)separateStreams.read());
+combineStreams.write('a');
+Serial.println((char)combineStreams.read());
 ```

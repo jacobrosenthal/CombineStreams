@@ -1,11 +1,11 @@
-#ifndef SeparateStreams_h
-#define SeparateStreams_h
+#ifndef CombineStreams_h
+#define CombineStreams_h
 
 #include "Arduino.h"
 
-class SeparateStreams : public Stream {
+class CombineStreams : public Stream {
   public:
-    SeparateStreams(Stream &_w, Stream &_r);
+    CombineStreams(Stream &_w, Stream &_r);
 
     void setWrite(Stream &_w);
     void setRead(Stream &_r);
@@ -49,4 +49,4 @@ class SeparateStreams : public Stream {
     Stream* w;
     Stream* r;
 };
-#endif // SeparateStreams_h
+#endif // CombineStreams_h
