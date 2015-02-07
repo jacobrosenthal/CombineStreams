@@ -1,5 +1,4 @@
 //unimpressive, but should look just like a serial port
-
 #include <SeparateStreams.h>
 
 SeparateStreams separateStreams(Serial, Serial); //write to, read from
